@@ -1,0 +1,55 @@
+import math
+
+def f(n):
+    if n.isdigit():
+        return True
+    else:
+        try:
+            float(n)
+            return True
+        except ValueError:
+            return False
+
+a = input("Выберите операцию: сложение, вычитание, умножение, деление, возведение в степень, логарифм, \n"
+          "округление в большую сторону, округление в меньшую сторону: ")
+x = input("Введите значение ")
+y = input("Введите значение ")
+while True:
+    if a in ('сложение', 'вычитание', 'умножение', 'деление', 'возведение в степень', 'логарифм', \
+             'округление в большую сторону', 'округление в меньшую сторону'):
+        if f(x):
+             if f(y):
+                 x = float(x)
+                 y = float(y)
+                 if a == 'сложение':
+                     print(x + y)
+                     break
+                 elif a == 'вычитание':
+                     print(x - y)
+                     break
+                 elif a == 'умножение':
+                     print(x * y)
+                     break
+                 elif a == 'деление':
+                     print(x / y)
+                     break
+                 elif a == 'возведение в степень':
+                     print(x ** y)
+                     break
+                 elif a == 'логарифм':
+                     print(math.log(x, y))
+                     break
+                 elif a == 'округление в большую сторону':
+                     print(math.ceil(x), math.ceil(y))
+                     break
+                 elif a == 'округление в меньшую сторону':
+                     print(math.floor(x), math.floor(y))
+                     break
+             else:
+                 print("Введите число")
+        else:
+            print('Введите число')
+            break
+    else:
+        print('Выберите операцию')
+        break
