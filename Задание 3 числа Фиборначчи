@@ -1,0 +1,14 @@
+s = int(input())
+a = b = 1
+while True:
+     if b <= s:
+         if b == s:
+             print('true')
+             break
+         else:
+             k = b
+             b = a + b
+             a = k
+     else:
+         print('false')
+         break
